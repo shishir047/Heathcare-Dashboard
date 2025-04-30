@@ -1,0 +1,762 @@
+body {
+  background: #F6F7F8;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* ----------NavigationBar---------- */
+
+.navbar {
+  position: absolute;
+  top: 2%;
+  left: 1.25%;
+  width: 96%;
+  height: 7.5%;
+  background: #ffffff;
+  border-radius: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 50;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 90%;
+  height: 100%;
+}
+
+.nav-link {
+  display: flex;
+  font-size: 14px;
+  gap: 1%;
+  list-style: none;
+  padding: 0px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: #e0f7fa;
+}
+
+.nav-item.active {
+  background: #01f0d0;
+}
+
+.nav-icon {
+  width: 30%;
+  height: 70%;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-picture {
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-details {
+  text-align: left;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 14px;
+  color: #072635;
+}
+
+.normal-text {
+  font-size: 12px;
+  color: #707070;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.menu-icon:hover {
+  background-color: #f0f0f0;
+}
+.mobile-nav {
+  position: fixed;
+  top: 7.5%;
+  left: 25%;
+  width: 40%;
+  max-height: 50vh;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.mobile-nav .nav-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.mobile-nav .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em; 
+  padding: 10px 15px;
+}
+
+@media (max-width: 1200px) {
+  .nav-link {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+
+
+
+
+/* -------sidebar--------- */
+
+.sidebar {
+  position: absolute;
+  top: 12%;
+  left: 1.25%;
+  background: #FFFFFF;
+  border-radius: 15pt;
+  display: block;
+  align-items: center;
+  z-index: 50;
+  width: 23.75%;
+  height: 80%;
+  overflow-y: auto;
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  left: 10px;
+  width: calc(100% - 55px); 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: gray;
+}
+
+.patient-list {
+  list-style: none;
+  padding: 0 0px;
+  margin: 0;
+}
+
+.patient-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.patient-item:hover {
+  background-color: #f0f0f0;
+}
+
+.selected:hover {
+  background-color: #D8FCF7;
+}
+
+.selected {
+  background-color: #D8FCF7;
+  margin: 0;
+  border-radius: 0;
+  cursor: auto;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.patient-info {
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.details {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+
+.more-options {
+  color: gray;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* --------- patient profile ---------- */
+
+.right-sidebar {
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  border-radius: 15px;
+  padding: 7%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.profile-img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2%;
+}
+
+.patient-name {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.patient-details {
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 7%;
+  padding-left: 2%;
+}
+
+.patient-details p {
+  margin: 8px 0;
+}
+
+.patient-detail-list img {
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.patient-detail-list{
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.detail-text {
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.show-btn {
+  background-color: #01F0D0;
+  padding: 10px 15px;
+  border: none;
+  height: 1%;
+  width: auto;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+
+.card{
+  padding: 2%;
+  background: white;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+/* -------------chart----------------- */
+
+
+.diagnosis-history {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.chart-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 2%;
+  background-color: #F4F0FE;
+  border-radius: 12px;
+}
+
+.chart-card {
+  padding: 16px;
+  background-color: #F4F0FE;
+  margin-bottom: 0;
+}
+
+.chart-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.chart-container {
+  height: 256px;
+}
+
+.detail-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.bp-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.bp-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bp-value {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.bp-status {
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 4px;
+}
+
+.bp-status img{
+  margin-right: 10px;
+}
+
+.systolic,
+.diastolic {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.systolic {
+  background-color: #d63384;
+}
+
+.diastolic {
+  background-color: #6f42c1;
+}
+
+.bp-divider {
+  width: 90%;
+  height: 1.5px;
+  background: #ccc;
+}
+
+.bp-detail img {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.chart-card,
+.detail-card,
+.stat-card {
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 950px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 1488px) {
+  .bp-chart{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 840px){
+  .chart-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  flex: 1; 
+  padding-bottom: 6%;
+  text-align: left;
+}
+
+.stat-card.blue {
+  background-color: #E0F3FA;
+}
+
+.stat-card.yellow {
+  background-color: #FFE6E9;
+}
+
+.stat-card.red {
+  background-color: #FFE6F1;
+}
+
+.stat-card-img{
+  height: 40%;
+  width: 40%;
+}
+
+.stat-value {
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.stat-label {
+  font-size: 14px;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.dropdown-header span {
+  margin-right: 8px;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: #ded3ff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px;
+  margin-top: 5px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.dropdown-menu li:hover {
+  background-color: #cbbaff;
+  color: white;
+}
+
+
+
+
+
+
+
+
+/* --------------Diagnostic List------------- */
+
+.diagnostic-list-container {
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 15px;
+  font-family: sans-serif;
+  background-color: #FFFFFF;
+  padding: 30px;
+}
+
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F6F7F8;
+  margin-bottom: 1%;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+
+.table-header div {
+  flex: 1;
+  
+  text-align: left;
+}
+
+
+.table-body {
+  max-height: 100px;
+  overflow-y: auto;
+  display: block;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+tbody {
+  display: block;
+  width: 100%;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #F6F7F8;
+}
+
+tr:hover{
+  background-color: #F6F7F8;
+}
+
+td {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*---------- Lab Results-----------*/
+.lab-results {
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.lab-results h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.lab-result-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.lab-result-tbody td {
+  padding: 10px;
+  margin-right: 10px;
+  text-align: left;
+}
+
+.lab-result-tbody td:last-child {
+  text-align: right;
+}
+
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* ----------------- Patient Profile + Lab Results -------------- */
+.right-sidebar-container {
+  position: absolute;
+  left: 76%;
+  top: 12%;
+  width: 21%;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+  .right-sidebar-container {
+    position: absolute;
+    left: 1.25%;
+    top: 94.5%;
+    width: 23.75%;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+
+/*------------Diagnosis History + Diagnosis List -----------*/
+
+.diagnosis-container{
+  position: absolute;
+  left: 26%;
+  top: 12%;
+  width: 48.75%;
+  align-content:center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .diagnosis-container{
+    position: absolute;
+    left: 26%;
+    top: 12%;
+    width: 71%;
+    align-content:center;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
